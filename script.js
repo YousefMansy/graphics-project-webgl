@@ -178,6 +178,7 @@ function loadBalloon() {
         objLoader.setMaterials( materials );
         objLoader.setPath( 'obj/balloon/' );
         objLoader.load( 'air_balloon.obj', function ( object ) {
+            console.log("loading");
 
             object.position.y = 1000;
             object.position.x = 900;
