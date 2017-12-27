@@ -176,7 +176,7 @@ function loadBalloon() {
     mtlLoader.setPath( 'obj/balloon/' );
     console.log("2");
 
-    mtlLoader.load( 'air_balloon.mtl', function( materials ) {
+    mtlLoader.load( 'Air_Balloon.mtl', function( materials ) {
         console.log("3");
 
         materials.preload();
@@ -185,7 +185,7 @@ function loadBalloon() {
         var objLoader = new THREE.OBJLoader();
         objLoader.setMaterials( materials );
         objLoader.setPath( 'obj/balloon/' );
-        objLoader.load( 'air_balloon.obj', function ( object ) {
+        objLoader.load( 'Air_Balloon.obj', function ( object ) {
             console.log("hmmmmmmMM");
 
             object.position.y = 1000;
