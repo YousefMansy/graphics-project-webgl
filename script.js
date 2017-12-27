@@ -127,8 +127,8 @@ function initialize(canvas, parameters) {
 
     loadSkyBox();
 
-    loadIsland();
     loadBalloon();
+    loadIsland();
 
 }
 
