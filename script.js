@@ -187,7 +187,7 @@ function loadBalloon() {
             requestAnimationFrame(moveBalloon.bind(moveBalloon,object));
 
 
-        });
+        },function(){console.log("success")}, function(){console.log("failed")});
 
     });
 
