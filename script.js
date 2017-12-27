@@ -97,7 +97,6 @@ function initialize(canvas, parameters) {
     // scene.add(obj);
     scene.add(directionalLight);
 
-
     // Load textures
     var waterNormals = new THREE.ImageUtils.loadTexture('img/waternormals.jpg');
 
@@ -307,7 +306,6 @@ function loadSkyBox() {
     scene.add(aSkybox);
 }
 
-
 function display() {
     water.render();
     renderer.render(scene, camera);
@@ -326,9 +324,6 @@ function resize(inWidth, inHeight) {
     canvas.html(renderer.domElement);
     display();
 }
-
-
-
 
 $(function () {
     WINDOW.initialize();
