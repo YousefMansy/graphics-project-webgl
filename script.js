@@ -172,9 +172,12 @@ function loadBalloon() {
 
     console.log("loading");
     var mtlLoader = new THREE.MTLLoader();
+    console.log("1");
     mtlLoader.setPath( 'obj/balloon/' );
+    console.log("2");
 
     mtlLoader.load( 'air_balloon.mtl', function( materials ) {
+        console.log("3");
 
         materials.preload();
 
