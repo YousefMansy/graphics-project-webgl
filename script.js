@@ -129,6 +129,8 @@ function initialize(canvas, parameters) {
 
     loadBalloon();
     loadIsland();
+    loadDeer(2);
+    loadChimp();
 
 }
 
@@ -142,9 +144,11 @@ function onDocumentMouseDown(event) {
 }
 
 function loadIsland() {
+    console.log("loading");
 
     var mtlLoader = new THREE.MTLLoader();
     mtlLoader.setPath( 'obj/mill/' );
+
     mtlLoader.load( 'low-poly-mill.mtl', function( materials ) {
 
         materials.preload();
@@ -162,7 +166,6 @@ function loadIsland() {
         });
 
     });
-
 }
 
 function loadBalloon() {
@@ -170,6 +173,7 @@ function loadBalloon() {
     console.log("loading");
     var mtlLoader = new THREE.MTLLoader();
     mtlLoader.setPath( 'obj/balloon/' );
+
     mtlLoader.load( 'air_balloon.mtl', function( materials ) {
 
         materials.preload();
@@ -179,6 +183,7 @@ function loadBalloon() {
         objLoader.setMaterials( materials );
         objLoader.setPath( 'obj/balloon/' );
         objLoader.load( 'air_balloon.obj', function ( object ) {
+            console.log("hmmmmmmMM");
 
             object.position.y = 1000;
             object.position.x = 900;
@@ -190,7 +195,6 @@ function loadBalloon() {
         },function(){console.log("success")}, function(){console.log("failed")});
 
     });
-
 }
 
 function loadChimp() {
