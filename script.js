@@ -256,9 +256,9 @@ function loadTwin() {
 function loadShip() {
 
     var mtlLoader = new THREE.MTLLoader();
-    mtlLoader.setPath( 'obj/twin/' );
+    mtlLoader.setPath( 'obj/ship/' );
 
-    mtlLoader.load( 'twin.mtl', function( materials ) {
+    mtlLoader.load( 'ship.mtl', function( materials ) {
 
         materials.preload();
 
