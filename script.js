@@ -129,6 +129,10 @@ function initialize(canvas, parameters) {
 
     loadBalloon();
     loadIsland();
+    loadEagle();
+    loadTropical();
+    loadShip();
+    // loadTwin();
 
 }
 
@@ -185,6 +189,147 @@ function loadBalloon() {
             object.scale.set(3,3,3);
             scene.add( object );
             requestAnimationFrame(moveBalloon.bind(moveBalloon,object));
+
+
+        },function(){console.log("success")}, function(){console.log("failed")});
+
+    });
+}
+
+function loadEagle() {
+
+    var mtlLoader = new THREE.MTLLoader();
+    mtlLoader.setPath( 'obj/eagle/' );
+
+    mtlLoader.load( 'eagle.mtl', function( materials ) {
+
+        materials.preload();
+
+        materials;
+        var objLoader = new THREE.OBJLoader();
+        objLoader.setMaterials( materials );
+        objLoader.setPath( 'obj/eagle/' );
+        objLoader.load( 'eagle.obj', function ( object ) {
+
+            object.position.y = 1000;
+            object.position.x = 0;
+            object.scale.set(10,10,10);
+            scene.add( object );
+            console.log("eagle loaded");
+            // requestAnimationFrame(moveEagle.bind(moveEagle,object));
+
+
+        },function(){console.log("success")}, function(){console.log("failed")});
+
+    });
+}
+
+function loadTwin() {
+
+    var mtlLoader = new THREE.MTLLoader();
+    mtlLoader.setPath( 'obj/twin/' );
+
+    mtlLoader.load( 'twin.mtl', function( materials ) {
+
+        materials.preload();
+
+        materials;
+        var objLoader = new THREE.OBJLoader();
+        objLoader.setMaterials( materials );
+        objLoader.setPath( 'obj/twin/' );
+        objLoader.load( 'twin.obj', function ( object ) {
+
+            object.position.y = 0;
+            object.position.x = 0;
+            object.position.z = -1000;
+            object.scale.set(0.005,0.005,0.005);
+            scene.add( object );
+            console.log("twin loaded");
+            // requestAnimationFrame(moveEagle.bind(moveEagle,object));
+
+
+        },function(){console.log("success")}, function(){console.log("failed")});
+
+    });
+}
+
+function loadShip() {
+
+    var mtlLoader = new THREE.MTLLoader();
+    mtlLoader.setPath( 'obj/twin/' );
+
+    mtlLoader.load( 'twin.mtl', function( materials ) {
+
+        materials.preload();
+
+        materials;
+        var objLoader = new THREE.OBJLoader();
+        objLoader.setMaterials( materials );
+        objLoader.setPath( 'obj/ship/' );
+        objLoader.load( 'ship.obj', function ( object ) {
+
+            object.position.y = 0;
+            object.position.x = 400;
+            object.position.z = -200;
+            object.scale.set(0.1,0.1,0.1);
+            scene.add( object );
+            console.log("ship loaded");
+            requestAnimationFrame(moveShip.bind(moveShip,object));
+
+
+        },function(){console.log("success")}, function(){console.log("failed")});
+
+    });
+}
+
+function loadTropical() {
+
+    var mtlLoader = new THREE.MTLLoader();
+    mtlLoader.setPath( 'obj/tropical/' );
+
+    mtlLoader.load( 'tropical.mtl', function( materials ) {
+
+        materials.preload();
+
+        materials;
+        var objLoader = new THREE.OBJLoader();
+        objLoader.setMaterials( materials );
+        objLoader.setPath( 'obj/tropical/' );
+        objLoader.load( 'tropical.obj', function ( object ) {
+
+            object.position.y = -50;
+            object.position.x = 6000;
+            // object.position.x = 100;
+            object.scale.set(2,2,2);
+            scene.add( object );
+            console.log("tropical loaded");
+            // requestAnimationFrame(moveEagle.bind(moveEagle,object));
+
+
+        },function(){console.log("success")}, function(){console.log("failed")});
+
+    });
+    var mtlLoader2 = new THREE.MTLLoader();
+    mtlLoader2.setPath( 'obj/tropical/' );
+
+    mtlLoader2.load( 'tropical.mtl', function( materials ) {
+
+        materials.preload();
+
+        materials;
+        var objLoader = new THREE.OBJLoader();
+        objLoader.setMaterials( materials );
+        objLoader.setPath( 'obj/tropical/' );
+        objLoader.load( 'tropical.obj', function ( object ) {
+
+            object.position.y = -50;
+            object.position.x = 9000;
+            object.position.z = 9000;
+            // object.position.x = 100;
+            object.scale.set(2,2,2);
+            scene.add( object );
+            console.log("tropical loaded");
+            // requestAnimationFrame(moveEagle.bind(moveEagle,object));
 
 
         },function(){console.log("success")}, function(){console.log("failed")});
@@ -252,6 +397,11 @@ function moveBalloon(object){
         object.position.y -= 5;
         requestAnimationFrame(moveBalloon.bind(moveBalloon,object));
     }
+}
+
+function moveShip(object){
+        object.position.z += 5;
+        requestAnimationFrame(moveShip.bind(moveShip,object));
 }
 
 function moveDeer(object){
