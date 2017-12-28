@@ -269,13 +269,13 @@ function loadShip() {
         objLoader.load( 'ship.obj', function ( object ) {
 
             object.position.y = 0;
-            object.position.x = 400;
+            object.position.x = -600;
             object.position.z = -200;
+            object.rotation.y = -30;
             object.scale.set(0.1,0.1,0.1);
             scene.add( object );
             console.log("ship loaded");
             requestAnimationFrame(moveShip.bind(moveShip,object));
-
 
         },function(){console.log("success")}, function(){console.log("failed")});
 
@@ -345,7 +345,8 @@ function moveBalloon(object){
 }
 
 function moveShip(object){
-        object.position.z += 5;
+        object.position.z += 2;
+        object.position.x += 2;
         requestAnimationFrame(moveShip.bind(moveShip,object));
 }
 
