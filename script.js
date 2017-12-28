@@ -130,7 +130,7 @@ function initialize(canvas, parameters) {
     loadBalloon();
     loadIsland();
     loadEagle();
-    loadTropical();
+    // loadTropical();
     loadShip();
     // loadTwin();
 
@@ -275,61 +275,6 @@ function loadShip() {
             scene.add( object );
             console.log("ship loaded");
             requestAnimationFrame(moveShip.bind(moveShip,object));
-
-
-        },function(){console.log("success")}, function(){console.log("failed")});
-
-    });
-}
-
-function loadTropical() {
-
-    var mtlLoader = new THREE.MTLLoader();
-    mtlLoader.setPath( 'obj/tropical/' );
-
-    mtlLoader.load( 'tropical.mtl', function( materials ) {
-
-        materials.preload();
-
-        materials;
-        var objLoader = new THREE.OBJLoader();
-        objLoader.setMaterials( materials );
-        objLoader.setPath( 'obj/tropical/' );
-        objLoader.load( 'tropical.obj', function ( object ) {
-
-            object.position.y = -50;
-            object.position.x = 6000;
-            // object.position.x = 100;
-            object.scale.set(2,2,2);
-            scene.add( object );
-            console.log("tropical loaded");
-            // requestAnimationFrame(moveEagle.bind(moveEagle,object));
-
-
-        },function(){console.log("success")}, function(){console.log("failed")});
-
-    });
-    var mtlLoader2 = new THREE.MTLLoader();
-    mtlLoader2.setPath( 'obj/tropical/' );
-
-    mtlLoader2.load( 'tropical.mtl', function( materials ) {
-
-        materials.preload();
-
-        materials;
-        var objLoader = new THREE.OBJLoader();
-        objLoader.setMaterials( materials );
-        objLoader.setPath( 'obj/tropical/' );
-        objLoader.load( 'tropical.obj', function ( object ) {
-
-            object.position.y = -50;
-            object.position.x = 9000;
-            object.position.z = 9000;
-            // object.position.x = 100;
-            object.scale.set(2,2,2);
-            scene.add( object );
-            console.log("tropical loaded");
-            // requestAnimationFrame(moveEagle.bind(moveEagle,object));
 
 
         },function(){console.log("success")}, function(){console.log("failed")});
